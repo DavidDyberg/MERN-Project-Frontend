@@ -1,4 +1,4 @@
-
+import * as Styles from './pagination.styles'
 
 interface PaginationProps {
     currentPage: number,
@@ -10,11 +10,11 @@ const Pagination = (prop: PaginationProps) => {
     const pages = Array.from({ length: prop.totalPages }, (_, i) => i + 1)
 
     return (
-        <div>
+        <Styles.PagesContainer>
             {pages.map(page => ( 
-                <button key={page} onClick={() => prop.setPage(page)}> {page}</button>
+                <Styles.PaginationButton key={page} onClick={() => prop.setPage(page)}> {page}</Styles.PaginationButton>
             ))}
-        </div>
+        </Styles.PagesContainer>
     )
 }
 

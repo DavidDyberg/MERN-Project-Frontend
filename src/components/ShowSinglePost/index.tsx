@@ -1,5 +1,8 @@
-import { LoaderFunctionArgs, useLoaderData } from "react-router-dom"
+import { Link, LoaderFunctionArgs, useLoaderData } from "react-router-dom"
 import type { Post } from "../../types"
+import * as Styles from './showSinglePost.styles'
+import { Chevronleft } from "../../routes/SignUp/SignUp.styles";
+
 
 export const loader = async (args: LoaderFunctionArgs) => {
     const { params } = args;
@@ -19,10 +22,15 @@ const ShowSinglePost = () => {
     const post = useLoaderData() as Post
 
     return (
-        <>
-        <h1>{post.title}</h1>
-            {}
-        </>
+        <Styles.SinglePostContainer>
+            <Link to='/'>
+                <Chevronleft/>
+            </Link>
+            <Styles.Title>{post.title}</Styles.Title>
+            <Styles.PostBody>{post.body}</Styles.PostBody>
+            <Styles.Author>post created by {post.author.userName}</Styles.Author>
+            { post.comments?.map(comment => <p key={comment._id}>{comment.body} - {comment.author.userName}</p>) }          
+        </Styles.SinglePostContainer>
     )
 }
 

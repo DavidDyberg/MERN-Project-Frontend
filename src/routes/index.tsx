@@ -2,6 +2,7 @@ import { LoaderFunctionArgs, useLoaderData, useSearchParams } from "react-router
 import type { Post } from "../types"
 import PostListItem from "../components/PostListItem"
 import Pagination from "../components/Pagination"
+import styled from "styled-components"
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
     const url = new URL(request.url)
@@ -21,6 +22,11 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     
 }   
 
+const Pages = styled.p`
+    text-align: center;
+    font-size: 20px;
+`
+
 const Index = () => {
     const data = useLoaderData() as { posts: Post[], totalPages: number , page :number} 
     const [ searchParams, setSearchParams ] = useSearchParams();
@@ -34,8 +40,7 @@ const Index = () => {
                 setPage={(page) => setSearchParams({ ...searchParams, page: page.toString() }) }
                 />
 
-
-            <p>Pages: {data?.totalPages}</p>
+            <Pages>Pages: {data?.totalPages}</Pages>
         </div>
     )
 }
