@@ -65,5 +65,4 @@ export const ErrorMessage = styled.div`
 export const Chevronleft = styled(ChevronLeft)`
     padding-right: 10px;
     color: black;
-    
 `

@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter, redirect } from 'react-router-dom'
 import SignUp, { action as signUpAction } from './routes/SignUp/index.tsx'
 import SignIn, { action as signInAction} from './routes/SignIn/index.tsx'
 import Createpost, {action as CreatePostAction} from './routes/CreatePost/index.tsx'
+import {action as createCommentAction} from './components/CommentForm/index.tsx'
+import {action as votesAction} from './components/Votes/index.tsx'
 import Index, {loader as indexLoader } from './routes/index.tsx'
 import auth from './lib/auth.ts' 
 import RequireAuth from './components/RequireAuth.tsx'
@@ -54,6 +56,14 @@ const router = createBrowserRouter ([
             path: 'create-post',
             action: CreatePostAction,
             element: <Createpost />
+          },
+          {
+            path: '/posts/:postId/comments',
+            action: createCommentAction
+          },
+          {
+            path: '/posts/:postId/vote',
+            action: votesAction
           }
         ]
       },

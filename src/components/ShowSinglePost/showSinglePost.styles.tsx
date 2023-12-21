@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
 export const SinglePostContainer = styled.div`
     width: 700px;
     height: 200px;
@@ -36,6 +41,25 @@ export const Author = styled.p`
     position: absolute;
     bottom: 8px;
     right: 16px;
+`
+
+export const CommentsContainer = styled.p`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+`
+
+export const CommentBody = styled.p`
+    width: 300px;
+    white-space: break-spaces;
+    line-height: 20px;
+`
+
+export const CommentAuthor = styled.p`
+    color: #666;
 `
 
 

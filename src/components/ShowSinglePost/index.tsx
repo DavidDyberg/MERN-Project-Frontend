@@ -2,6 +2,8 @@ import { Link, LoaderFunctionArgs, useLoaderData } from "react-router-dom"
 import type { Post } from "../../types"
 import * as Styles from './showSinglePost.styles'
 import { Chevronleft } from "../../routes/SignUp/SignUp.styles";
+import CommentForm from "../CommentForm";
+import VoteComponent from "../Votes";
 
 
 export const loader = async (args: LoaderFunctionArgs) => {
@@ -19,18 +21,29 @@ export const loader = async (args: LoaderFunctionArgs) => {
 }
 
 const ShowSinglePost = () => {
-    const post = useLoaderData() as Post
+    const post = useLoaderData() as Post;
 
     return (
-        <Styles.SinglePostContainer>
-            <Link to='/'>
-                <Chevronleft/>
-            </Link>
-            <Styles.Title>{post.title}</Styles.Title>
-            <Styles.PostBody>{post.body}</Styles.PostBody>
-            <Styles.Author>post created by {post.author.userName}</Styles.Author>
-            { post.comments?.map(comment => <p key={comment._id}>{comment.body} - {comment.author.userName}</p>) }          
-        </Styles.SinglePostContainer>
+        <Styles.Wrapper>
+            <Styles.SinglePostContainer>
+                <VoteComponent post={post} />
+                <Link to='/'>
+                    <Chevronleft/>
+                </Link>
+                <Styles.Title>{post.title}</Styles.Title>
+                <Styles.PostBody>{post.body}</Styles.PostBody>
+                <Styles.Author>post created by {post.author.userName}</Styles.Author>
+            </Styles.SinglePostContainer>
+
+            <CommentForm postId={post._id} />
+                <h3>Comments:</h3>
+                { post.comments?.map(comment => 
+                <Styles.CommentsContainer key={comment._id}>
+                    <Styles.CommentBody>{comment.body}</Styles.CommentBody> 
+                    <Styles.CommentAuthor>by - {comment.author.userName}</Styles.CommentAuthor>
+                </Styles.CommentsContainer>) } 
+            
+        </Styles.Wrapper>
     )
 }
 

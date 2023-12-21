@@ -1,10 +1,11 @@
-import React from 'react';
 import * as Styles from './PostListItem.styles';
 import { Post } from '../../types';
+import VoteComponent from '../Votes';
 
 const PostListItem = ({ post }: { post: Post }) => {
   return (
     <Styles.PostContainer key={post._id}>
+        <VoteComponent post={post} />
       {post.link ? (
         <>
           <Styles.PostTitle>{post.title}</Styles.PostTitle>

@@ -7,6 +7,7 @@ export const PostContainer = styled.div`
   padding: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  position: relative;
 
   @media (max-width: 768px) {
     width: 400px;
