@@ -59,10 +59,11 @@ const ShowSinglePost = () => {
                 <h3>Comments:</h3>
                 { post.comments?.map(comment => 
                 <Styles.CommentsContainer key={comment._id}>
-                    <Styles.CommentBody>{comment.body}</Styles.CommentBody> 
-                    <Styles.CommentAuthor>by - {comment.author.userName}</Styles.CommentAuthor>
-                    <DeleteComment comment={comment} post={post}              
-            /> 
+                    <Styles.CommentBody>{comment.body}</Styles.CommentBody>
+                    <Styles.DeleteCommentWrapper>
+                        <Styles.CommentAuthor>by - {comment.author.userName}</Styles.CommentAuthor>
+                        <DeleteComment comment={comment} post={post} /> 
+                    </Styles.DeleteCommentWrapper>   
                 </Styles.CommentsContainer>) } 
             
         </Styles.Wrapper>

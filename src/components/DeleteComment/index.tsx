@@ -1,7 +1,8 @@
-import { ActionFunctionArgs, Form, redirect } from "react-router-dom";
+import { ActionFunctionArgs, redirect } from "react-router-dom";
 import auth from "../../lib/auth";
 import { X } from 'lucide-react'
 import type { Comment, Post } from "../../types";
+import * as Styles from '../DeleteForm.styles'
 
 export const action = async (args: ActionFunctionArgs) => {
     const { postId, commentId } = args.params;
@@ -26,16 +27,16 @@ const DeleteComment = ({comment, post }: { comment: Comment, post: Post}) => {
       
     return (
       <div>
-        <Form method='delete' action={`/posts/${post._id}/comments/${comment._id}`}>
+        <Styles.DeleteForm method='delete' action={`/posts/${post._id}/comments/${comment._id}`}>
           <input 
             type="hidden"
             name="delete-comment" 
             id='delete-comment'
           />
-          <button type='submit'>
+          <Styles.DeleteButton type='submit'>
                 <X size={16} />
-          </button>
-        </Form>
+          </Styles.DeleteButton>
+        </Styles.DeleteForm>
       </div>
     );
   };

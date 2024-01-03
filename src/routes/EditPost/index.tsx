@@ -56,17 +56,7 @@ const EditPost = () => {
           <Styles.Label htmlFor="body">Body (Optional)</Styles.Label>
           <Styles.Input type="text" name="body" id="body" />
         </Styles.InputWrapper>
-
-        <Styles.InputWrapper>
-          <Styles.Label htmlFor="image">Image (Optional)</Styles.Label>
-          <Styles.Input
-            type="file"
-            name="image"
-            id="image"
-            accept="image/*"
-          />
-        </Styles.InputWrapper>
-
+        
         <Styles.ButtonDiv>
           <Button type="submit">Edit</Button>
         </Styles.ButtonDiv>

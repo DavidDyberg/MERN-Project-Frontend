@@ -62,4 +62,8 @@ export const CommentAuthor = styled.p`
     color: #666;
 `
 
-
+export const DeleteCommentWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px 
+`

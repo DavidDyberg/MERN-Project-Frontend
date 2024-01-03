@@ -13,13 +13,10 @@ const Container = styled.div`
 function App() {
   return (
     <>
-    
       <GlobalStyles />
       <Header />
       <Container>
-      
         <Outlet/>
-      
       </Container>
     </>
   )

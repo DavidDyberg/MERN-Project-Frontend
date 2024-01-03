@@ -47,12 +47,6 @@ const Createpost = () => {
                     <Styles.Label htmlFor="body">Body (Optinoal)</Styles.Label>
                     <Styles.Input type="text" name="body" id="body"/>
                 </Styles.InputWrapper>
-
-                <Styles.InputWrapper>
-                    <Styles.Label htmlFor="image">Image (Optinoal)</Styles.Label>
-                    <Styles.Input type="file" name="image" id="image" accept="image/*"/>
-                </Styles.InputWrapper>
-                
                 <Styles.ButtonDiv>
                     <Button type="submit">Post</Button>
                 </Styles.ButtonDiv>
