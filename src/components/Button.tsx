@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 export const Button = styled.button`
     cursor: pointer;
-    background-color: #84C7AE;
+    background: linear-gradient(to right, #3498db, #2980b9);
     padding: 10px 20px;
     margin: 10px;
     border-radius: 10px;
     border: none;
-    font-size: 20px;
+    font-weight: bold;
+    color: white;
 
     &:hover {
-        background-color: #84c7aeb9;
+        background: #2980b9;
     }
 `

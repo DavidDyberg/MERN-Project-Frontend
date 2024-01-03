@@ -7,6 +7,12 @@ export const VoteContainer = styled.div`
     top: 10px;
     border: 1px grey solid;
     border-radius: 10px;
+    display: flex;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 3px;
 `
 
 export const Score = styled.span`

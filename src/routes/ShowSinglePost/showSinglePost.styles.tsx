@@ -19,7 +19,7 @@ export const SinglePostContainer = styled.div`
   }
 
   @media (max-width: 500px) {
-    width: 250px;
+    width: 300px;
     height: 400px;
   }
 `

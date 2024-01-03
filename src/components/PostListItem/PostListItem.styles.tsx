@@ -9,6 +9,10 @@ export const PostContainer = styled.div`
   border-radius: 8px;
   position: relative;
 
+  &:hover {
+    background: #2980b924;
+  }
+
   @media (max-width: 768px) {
     width: 400px;
   }
@@ -35,7 +39,7 @@ export const PostLink = styled(Link)`
 `;
 
 export const PostAuthor = styled.p`
-  margin-bottom: 8px;
+  bottom: 5px;
   color: #666;
 `;
 
@@ -46,11 +50,5 @@ export const ShowPostLink = styled.span`
 
 export const StyledLink = styled(Link)`
     text-decoration: none;
-    color: #007bff;
 `;
 
-export const Wrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-`
