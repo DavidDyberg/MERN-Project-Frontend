@@ -13,6 +13,12 @@ export const VoteContainer = styled.div`
     align-items: center;
     gap: 8px;
     padding: 3px;
+
+    @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        width: 20px;
+    }
 `
 
 export const Score = styled.span`

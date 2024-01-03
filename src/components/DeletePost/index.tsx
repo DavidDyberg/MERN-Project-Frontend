@@ -7,7 +7,7 @@ import * as Styles from '../DeleteForm.styles'
 export const action = async (args: ActionFunctionArgs) => {
 	const { id } = args.params
 
-		const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/posts/' + id + '/delete',
+		const response = await fetch(import.meta.env.VITE_BACKEND_URL + '/posts/' + id,
 				
 			{
 				headers: {
@@ -31,11 +31,8 @@ const DeletePost = ({ post }: {  post: Post}) => {
     <>
     <Styles.DeleteForm 
         method="delete" 
-        action={`/posts/${post._id}`}>
-        <input 
-            type="hidden" 
-            name="delete-comment"
-             />
+        action={`/posts/${post._id}/delete-post`}>
+        <input type="hidden" />
         <Styles.DeleteButton type="submit"><X size={16} /></Styles.DeleteButton>
     </Styles.DeleteForm>
     </>

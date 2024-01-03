@@ -16,11 +16,12 @@ export const SinglePostContainer = styled.div`
 
     @media (max-width: 768px) {
     width: 400px;
+    height: auto;
   }
 
   @media (max-width: 500px) {
     width: 300px;
-    height: 400px;
+    height: auto;
   }
 `
 
@@ -34,6 +35,14 @@ export const Title = styled.h2`
 
 export const PostBody = styled.p`
     width: 400px;
+
+    @media (max-width: 768px) {
+        width: 300px;
+    }
+
+    @media (max-width: 500px) {
+        width: 250px;
+    }
 `
 
 export const Author = styled.p`
@@ -50,6 +59,11 @@ export const CommentsContainer = styled.p`
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
+
+    @media (max-width: 500px) {
+    width: 300px;
+    
+  }
 `
 
 export const CommentBody = styled.p`
@@ -60,6 +74,7 @@ export const CommentBody = styled.p`
 
 export const CommentAuthor = styled.p`
     color: #666;
+    width: 70px;
 `
 
 export const DeleteCommentWrapper = styled.div`

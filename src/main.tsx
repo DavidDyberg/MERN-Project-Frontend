@@ -70,7 +70,7 @@ const router = createBrowserRouter ([
             action: createCommentAction
           },
           {
-            path: '/posts/:id/delete',
+            path: '/posts/:id/delete-post',
             action: deletePostAction
           },
           {
