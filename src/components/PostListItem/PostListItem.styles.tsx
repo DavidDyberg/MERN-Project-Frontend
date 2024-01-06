@@ -28,6 +28,7 @@ export const PostTitle = styled.h2`
 
   @media (max-width: 500px) {
     font-size: 20px;
+    max-width: 200px;
   }
 `;
 
