@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
 export const SinglePostContainer = styled.div`
     width: 700px;
-    height: 200px;
+    height: auto;
     margin-bottom: 20px;
     padding: 16px;
     border: 1px solid #ccc;
