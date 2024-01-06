@@ -39,14 +39,18 @@ const ShowSinglePost = () => {
               <span>{post.link}</span>
             </Link>
             <Styles.PostBody>{post.body}</Styles.PostBody>
-            <Styles.Author>post created by {post.author.userName}</Styles.Author>
+            <Styles.Author>by {post.author.userName}</Styles.Author>
+            <DeletePost post={post} />
+                <Link to={`/posts/${post._id}/edit`}>
+                    <Button>Edit post</Button>
+                </Link>
             
           </>
         ) : (
             <>
                 <Styles.Title>{post.title}</Styles.Title>
                 <Styles.PostBody>{post.body}</Styles.PostBody>
-                <Styles.Author>post created by {post.author.userName}</Styles.Author>
+                <Styles.Author>by {post.author.userName}</Styles.Author>
                 <DeletePost post={post} />
                 <Link to={`/posts/${post._id}/edit`}>
                     <Button>Edit post</Button>

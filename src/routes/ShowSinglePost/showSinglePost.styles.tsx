@@ -31,6 +31,7 @@ export const Title = styled.h2`
     margin-bottom: 8px;
     color: #333;
     margin-top: 0;
+    margin-bottom: 30px;
 `
 
 export const PostBody = styled.p`
